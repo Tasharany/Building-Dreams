@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <title>Building Dreams - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Index.css">
+</head>
+
+<body>
+    <div class="container">
+        <header style="background-color: #6B7A8F;">
+            <nav class="navbar">
+                <div class="logo-text">Building <span class="dreams">Dreams</span></div>
+                <div class="logo">
+                    <img src="Images/logo.jpg" alt="Building Dreams Logo" class="logo-img">
+                </div>
+                <div class="navbar-links">
+                    <a href="builder.html" class="start-building">Start Building</a>
+                    <a href="auth.html" class="login-register">Login/Register</a>
+                </div>
+            </nav>
+            <div class="sub-navbar" style="background-color: #D9D9D9;">
+                <button onclick="alert('PC Builder clicked');">PC Builder</button>
+                <button onclick="alert('Parts clicked');">Parts</button>
+                <button><a href="guide.html">Guides</a></button>
+                <button><a href="build.html">Build</a></button>
+            </div>
+        </header>
+        <main>
+            <section class="introduction">
+                <h1>BUILD ANY COMPUTER YOU CAN IMAGINE!</h1>
+                <a href="builder.html" class="start-here-button">Start Here!</a>
+            </section>
+            <section class="visualization-container">
+                <div class="center-rectangle"></div>
+            </section>
+            <section class="trending-builds">
+                <h2>Trending Builds</h2>
+                <div class="build-container">
+                    <div class="build-text">Gaming/Streaming</div>
+                    <img src="/Frontend/Images/GamingPC.jpg" alt="Gaming PC" class="build gaming"
+                        onclick="toggleSpecs('gamingSpecs')">
+                    <div id="gamingSpecs" class="specs" style="display:none;">
+                        <strong>Specifications:</strong>
+                        <ul>
+                            <li>CPU: Intel Core i9-11900K</li>
+                            <li>GPU: NVIDIA RTX 3080 10GB</li>
+                            <li>RAM: 32GB DDR4 3200MHz</li>
+                            <li>Storage: 1TB NVMe SSD + 2TB HDD</li>
+                            <li>Motherboard: ASUS ROG Strix Z590-E</li>
+                            <li>Power Supply: 750W 80+ Gold Certified</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="build-container">
+                    <div class="build-text">Video Editing</div>
+                    <img src="Images/VideoeditingPC.jpg" alt="Video Editing PC" class="build editing"
+                        onclick="toggleSpecs('editingSpecs')">
+                    <div id="editingSpecs" class="specs" style="display:none;">
+                        <strong>Specifications:</strong>
+                        <ul>
+                            <li>CPU: AMD Ryzen 9 5950X</li>
+                            <li>GPU: NVIDIA RTX 3090 24GB</li>
+                            <li>RAM: 64GB DDR4 3600MHz</li>
+                            <li>Storage: 2TB NVMe SSD</li>
+                            <li>Motherboard: MSI MPG B550 GAMING EDGE WIFI</li>
+                            <li>Power Supply: 850W 80+ Platinum Certified</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="build-container">
+                    <div class="build-text">On a Budget</div>
+                    <img src="Images/BudgetPC.jpg" alt="Budget PC" class="build budget"
+                        onclick="toggleSpecs('budgetSpecs')">
+                    <div id="budgetSpecs" class="specs" style="display:none;">
+                        <strong>Specifications:</strong>
+                        <ul>
+                            <li>CPU: Intel Core i5-10400F</li>
+                            <li>GPU: NVIDIA GTX 1650 4GB</li>
+                            <li>RAM: 16GB DDR4 2666MHz</li>
+                            <li>Storage: 500GB NVMe SSD</li>
+                            <li>Motherboard: Gigabyte B460M DS3H</li>
+                            <li>Power Supply: 500W 80+ Bronze Certified</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Building Dreams PC Configurator</p>
+        </footer>
+    </div>
+    <div id="chatBox" class="chat-box">
+        <div class="chat-header">Chat</div>
+        <span class="chat-close" onclick="closeChat()">&#10005;</span>
+        <div id="chatContent" class="chat-content">
+            <p>Have questions? Ask us anything!</p>
+            <form id="messageForm">
+                <label for="userName">Your Name</label>
+                <input type="text" id="userName" name="user_name" placeholder="Enter your name" required>
+
+                <label for="userEmail">Your Email</label>
+                <input type="email" id="userEmail" name="user_email" placeholder="Enter your email" required>
+
+                <label for="messageInput">Message</label>
+                <textarea id="messageInput" name="message" placeholder="Type your message here..." required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+            <p><a href="#" onclick="showFAQs()">View FAQs</a></p>
+        </div>
+    </div>
+    <script src="Scripts.js"></script>
+</body>
+
+</html>

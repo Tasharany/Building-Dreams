@@ -1,0 +1,97 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Ensure it's centered */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header {
+    background-color: var(--primary-color);
+    padding: 1em 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em; /* Match padding with auth.css */
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    color: white; /* Ensuring the logo text is white */
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover, .navbar-links a.active {
+    background-color: var(--hover-color);
+}
+
+main {
+    flex-grow: 1; /* To push the footer down */
+    padding: 2em;
+}
+
+.guide-section {
+    background: white;
+    padding: 2em;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: auto; /* Centering the section */
+}
+
+.guide-article h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+.guide-article p {
+    color: var(--secondary-text-color);
+    margin-bottom: 1em;
+}
+
+.main-footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-brand, .navbar-links {
+        padding: 0.5em;
+    }
+
+    main {
+        padding: 1em;
+    }
+
+    .guide-section {
+        padding: 1em;
+    }
+}

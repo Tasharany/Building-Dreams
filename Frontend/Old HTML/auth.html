@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Dreams - Auth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-text" style="flex-grow: 1;">Building <span class="dreams">Dreams</span></div>
+            <div class="logo">
+                <img src="Images/logo.jpg" alt="Building Dreams Logo" class="logo-img">
+            </div>
+            <div class="navbar-links">
+                <a href="Index.html">Home</a>
+                <a href="builder.html">Start Building</a>
+                <a href="auth.html">Login/Register</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <section class="auth-section">
+                <div class="tabs">
+                    <button class="tablink" onclick="openTab('Login')" id="defaultOpen">Login</button>
+                    <button class="tablink" onclick="openTab('Register')">Register</button>
+                </div>
+
+                <div id="Login" class="tabcontent">
+                    <h2>Login to your account</h2>
+                    <form id="loginForm">
+                        <input type="email" name="email" id="loginEmail" required placeholder="Email">
+                        <input type="password" name="password" id="loginPassword" required placeholder="Password">
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+
+                <div id="Register" class="tabcontent" style="display: none;">
+                    <h2>Create an account</h2>
+                    <form id="registerForm">
+                        <input type="text" name="username" id="registerUsername" required placeholder="Username">
+                        <input type="email" name="email" id="registerEmail" required placeholder="Email">
+                        <input type="password" name="password" id="registerPassword" required placeholder="Password">
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Building Dreams PC Configurator</p>
+    </footer>
+    <script src="Scripts.js"></script>
+</body>
+
+</html>

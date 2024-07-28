@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Dreams - Build Your PC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="builder.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <nav class="navbar">
+                <div class="logo-text" style="flex-grow: 1;">Building <span class="dreams">Dreams</span></div>
+                <div class="logo">
+                    <img src="Images/logo.jpg" alt="Building Dreams Logo" class="logo-img">
+                </div>
+                <div class="navbar-links">
+                    <a href="Index.html">Home</a>
+                    <a href="builder.html">Start Building</a>
+                    <a href="auth.html">Login/Register</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="configurator" aria-labelledby="configuratorTitle">
+                <h2 id="configuratorTitle">Select Your Components</h2>
+                <div class="step-container" aria-label="Component Selection">
+                    <!-- CPU Selection -->
+                    <label for="cpu-select">CPU:</label>
+                    <select id="cpu-select" name="cpu" onchange="updateConfiguration()">
+                        <option value="">--Please choose an option--</option>
+                        <option value="intel-i9">Intel i9</option>
+                        <option value="intel-i7">Intel i7</option>
+                        <option value="intel-i5">Intel i5</option>
+                        <option value="amd-ryzen9">AMD Ryzen 9</option>
+                        <option value="amd-ryzen7">AMD Ryzen 7</option>
+                        <option value="amd-ryzen5">AMD Ryzen 5</option>
+                    </select>
+            
+                    <!-- GPU Selection -->
+                    <label for="gpu-select">GPU:</label>
+                    <select id="gpu-select" name="gpu" onchange="updateConfiguration()">
+                        <option value="">--Please choose an option--</option>
+                        <option value="nvidia-rtx4090">NVIDIA RTX 4090</option>
+                        <option value="nvidia-rtx4080">NVIDIA RTX 4080</option>
+                        <option value="nvidia-rtx4070super">NVIDIA RTX 4070Super</option>
+                        <option value="nvidia-rtx4070">NVIDIA RTX 4070</option>
+                        <option value="nvidia-rtx3090">NVIDIA RTX 3090</option>
+                        <option value="nvidia-rtx3080">NVIDIA RTX 3080</option>
+                        <option value="nvidia-rtx3070">NVIDIA RTX 3070</option>
+                        <option value="amd-rx6900xt">AMD Radeon RX 6900 XT</option>
+                        <option value="amd-rx6800xt">AMD Radeon RX 6800 XT</option>
+                        <option value="amd-rx6700xt">AMD Radeon RX 6700 XT</option>
+                    </select>
+            
+                    <!-- Motherboard Selection -->
+                    <label for="mobo-select">Motherboard:</label>
+                    <select id="mobo-select" name="mobo" onchange="updateConfiguration()">
+                        <option value="">--Please choose an option--</option>
+                        <option value="asus-rog">ASUS ROG Maximus</option>
+                        <option value="msi-meg">MSI MEG Z490</option>
+                        <option value="gigabyte-aorus">Gigabyte Aorus Master</option>
+                        <option value="asrock-taichi">ASRock X570 Taichi</option>
+                    </select>
+            
+                    <!-- RAM Selection -->
+                    <label for="ram-select">RAM:</label>
+                    <select id="ram-select" name="ram" onchange="updateConfiguration()">
+                        <option value="">--Please choose an option--</option>
+                        <option value="16gb-ddr4">16GB DDR4</option>
+                        <option value="32gb-ddr4">32GB DDR4</option>
+                        <option value="64gb-ddr4">64GB DDR4</option>
+                        <option value="16gb-ddr5">16GB DDR5</option>
+                        <option value="32gb-ddr5">32GB DDR5</option>
+                        <option value="64gb-ddr5">64GB DDR5</option>
+                    </select>
+            
+                    <!-- Storage Selection -->
+                    <label for="storage-select">Storage:</label>
+                    <select id="storage-select" name="storage" onchange="updateConfiguration()">
+                        <option value="">--Please choose an option--</option>
+                        <option value="1tb-ssd">1TB SSD</option>
+                        <option value="2tb-ssd">2TB SSD</option>
+                        <option value="4tb-ssd">2TB SSD</option>
+                        <option value="8tb-ssd">8TB SSD</option>
+                        <option value="500GB-sata">500GB SATA</option>
+                        <option value="1tb-sata">1TB SATA</option>
+                        <option value="2tb-sata">2TB SATA</option>
+                        <option value="1tb-hdd">1TB HDD</option>
+                        <option value="2tb-hdd">4TB HDD</option>
+                        <option value="4tb-hdd">2TB HDD</option>
+                        <option value="8tb-hdd">8TB HDD</option>
+                    </select>
+            
+                    <!-- PSU Selection -->
+                    <label for="psu-select">Power Supply:</label>
+                    <select id="psu-select" name="psu" onchange="updateConfiguration()">
+                        <option value="">--Please choose an option--</option>
+                        <option value="650w">650W</option>
+                        <option value="750w">750W</option>
+                        <option value="850w">850W</option>
+                        <option value="1000w">1000W</option>
+                        <option value="1500w">1500W</option>
+                    </select>
+            
+                    <!-- Cooling System Selection -->
+                    <label for="cooling-select">Cooling System:</label>
+                    <select id="cooling-select" name="cooling" onchange="updateConfiguration()">
+                        <option value="">--Please choose an option--</option>
+                        <option value="air-cooling">Air Cooling</option>
+                        <option value="liquid-cooling">Liquid Cooling</option>
+                        <option value="custom-loop">Custom Water Loop</option>
+                    </select>
+                </div>
+
+                <div class="visualization-container" aria-label="Build Visualization">
+                    <h3>Your PC configuration will appear here:</h3>
+                    <img id="selected-cpu" src="Images/placeholder_cpu.png" alt="Selected CPU">
+                    <img id="selected-gpu" src="Images/placeholder_gpu.png" alt="Selected GPU">
+                </div>
+
+                <button class="save-build-btn" id="saveBuildButton">Save Build</button>
+            </section>
+
+            <section class="popular-parts" aria-label="Popular Parts">
+                <h2>Popular Parts</h2>
+                <div class="square-container">
+                    <div class="grey-square">
+                        <img src="Images/cpu.png" alt="CPU">
+                        <p>CPU</p>
+                    </div>
+                    <div class="grey-square">
+                        <img src="Images/memory.png" alt="Memory">
+                        <p>Memory</p>
+                    </div>
+                    <div class="grey-square">
+                        <img src="Images/motherboard.png" alt="Motherboard">
+                        <p>Motherboard</p>
+                    </div>
+                    <div class="grey-square">
+                        <img src="Images/GPU.png" alt="GPU">
+                        <p>GPU</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            function updateConfiguration() {
+                var selectedCpu = document.getElementById("cpu-select").value;
+                var selectedGpu = document.getElementById("gpu-select").value;
+
+                var cpuImg = document.getElementById("selected-cpu");
+                var gpuImg = document.getElementById("selected-gpu");
+
+                cpuImg.src = "Images/" + selectedCpu + ".png";
+                gpuImg.src = "Images/" + selectedGpu + ".png";
+            }
+        </script>
+
+        <footer>
+            <p>&copy; 2024 Building Dreams PC Configurator</p>
+        </footer>
+    </div>
+    <script src="Script.js"></script>
+</body>
+
+</html>

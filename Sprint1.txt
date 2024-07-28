@@ -1,0 +1,47 @@
+Stories or Scenarios
+1. The Enthusiast Builder: X, a gaming enthusiast, wants to build a high-end gaming PC with the latest GPU and a powerful CPU to handle new games at ultra settings.
+2. The Professional Creator: X^2, a video editor, needs a workstation that supports heavy video editing software, with lots of RAM and a fast multi-core processor.
+3. The Budget Student: X^3, a college student, looks for a budget-friendly PC that can handle their school projects and some light gaming in their free time.
+
+
+Features
+* PC Configurator System: An interactive tool for users to select components like processor, graphics card, memory, etc. It will also check for compatibility and update the total price in real-time.
+* Dynamic Visualization: A visual representation of the selected components within a computer case.
+* Price Calculation: Real-time calculation of the total cost as components are selected or changed.
+* Save and Share Builds: Option for users to save their custom builds and share them with others.
+* Chat/Message Feature: A chat system for users to seek advice or help from a company representative.
+
+
+Wireframes
+1. Homepage: Overview of the service, popular builds, and starting point for the PC configurator.
+2. Configurator Page: Step-by-step component selection, with compatibility alerts and pricing updates.
+3. Build Visualization Page: A 3D or 2D dynamic representation of the build.
+4. Checkout Page: Summary of the selected components, total price, and payment options.
+5. Support/Chat Page: A chat interface for user support and inquiries.
+
+
+Use Cases
+* Selecting Components: Users can choose each component based on their needs, with the system checking for compatibility.
+* Saving and Sharing Builds: Users can save their configurations and share them with friends or social media.
+* Getting Support: Users can initiate a chat to get personalized advice or answers to their queries.
+
+
+Project Backlog
+1. Setup Development Environment: Prepare the tools and platforms needed for development.
+2. Design Database Schema: Structure the database to store user builds, components, and chat logs.
+3. Develop PC Configurator Tool: Code the logic for component selection and compatibility checks.
+4. Implement Dynamic Visualization: Create the system for visualizing the PC builds.
+5. Add Price Calculation Feature: Develop the feature for real-time price updates.
+6. Create Save/Share Functionality: Enable users to save and share their builds.
+7. User Account Management: Allow users to create accounts, log in, and manage their builds.
+8. Testing and Quality Assurance: Test the website for bugs, usability, and performance issues.
+
+
+Backlog for First Sprint
+1. Setup Development Environment
+2. Basic Layout for Homepage and Configurator Page
+3. Initial Development of PC Configurator Tool (focus on processor, graphics card, and memory selection)
+4. Prototype of Dynamic Visualization (basic version)
+
+
+Contribution of Each Team Member

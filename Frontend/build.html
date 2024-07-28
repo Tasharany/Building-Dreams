@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Product - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendors/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/css/Bootstrap-Chat.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min-1.css">
+    <link rel="stylesheet" href="assets/css/style-1.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md sticky-top navbar-dark py-3" id="mainNav">
+        <div class="container"><img class="rounded-circle me-2" width="30" height="30" src="assets/img/logo.jpg?h=0703091e2f747011f5090490387b1b55"><a class="navbar-brand d-flex align-items-center" href="index.html"><span>Building Dreams</span></a><button data-bs-toggle="collapse" data-bs-target="#navcol-1" class="navbar-toggler"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guides.html">Guides</a></li>
+                    <li class="nav-item"><a class="nav-link" href="parts.html">Parts</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="build.html">Build</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Log in</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signup.html">Sign up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <style>
+            /* CSS for improved styling */
+            .step-container div {
+                margin-bottom: 20px;
+            }
+
+            label {
+                font-weight: bold;
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            select {
+                padding: 8px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            select:focus {
+                outline: none;
+                border-color: #007bff;
+                box-shadow: 0 0 5px #007bff;
+            }
+
+            body {
+                font-family: 'Open Sans', sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                margin: 0;
+
+            }
+
+            .configurator {
+                background: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                padding: 20px;
+                margin: auto;
+                max-width: 700px;
+            }
+
+            .configurator h2 {
+                color: #333;
+                margin-bottom: 30px;
+                text-align: center;
+                font-weight: 300;
+            }
+
+            .configurator label {
+                color: #333;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .configurator select {
+                width: 100%;
+                padding: 10px 15px;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                background-color: #fff;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                font-size: 14px;
+                color: #333;
+                box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+            }
+
+            .configurator .save-build-btn {
+                background-color: #0056b3;
+                color: #fff;
+                border: none;
+                padding: 15px 30px;
+                border-radius: 4px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                display: block;
+                width: 100%;
+                text-align: center;
+                transition: background-color 0.3s ease;
+            }
+
+            .configurator .save-build-btn:hover {
+                background-color: #004494;
+            }
+
+            /* Style for the search box */
+            .search-container {
+                padding: 10px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .search-box {
+                padding: 10px 15px;
+                width: calc(100% - 30px);
+                max-width: 300px;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+                font-size: 14px;
+            }
+
+            .modern-card {
+                background: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                padding: 20px;
+                margin-bottom: 20px;
+                border-left: 4px solid #0056b3;
+            }
+
+            .modern-header {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 15px;
+                color: #333;
+            }
+
+            .modern-total {
+                font-size: 24px;
+                font-weight: bold;
+                color: #0056b3;
+                margin-bottom: 10px;
+            }
+
+            .modern-button {
+                background-color: #0056b3;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .modern-button:hover {
+                background-color: #004494;
+            }
+
+            .modern-button svg {
+                margin-right: 8px;
+            }
+
+            .icon-style {
+                fill: white;
+                height: 20px;
+                width: 20px;
+            }
+
+            .content-container {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+
+            .configurator-container,
+            .summary-container {
+                background: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                flex-basis: 48%;
+                padding: 20px;
+            }
+
+            .summary-container {
+                min-height: 400px; /* Adjust as needed for your design */
+            }
+
+            .separator {
+                border-bottom: 1px solid #eee;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .content-container {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+
+            .configurator-container,
+            .summary-container {
+                background: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                flex-basis: 48%;
+                padding: 20px;
+            }
+
+            .summary-container {
+                min-height: 400px; /* Adjust as needed for your design */
+            }
+
+            .separator {
+                border-bottom: 1px solid #eee;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 992px) {
+                .content-container {
+                    flex-direction: column;
+                }
+
+                .configurator-container,
+                .summary-container {
+                    flex-basis: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .save-build-section {
+                    width: 90%;
+                    margin: 20px auto;
+                    flex-direction: column;
+                    .configurator-container,
+                    .summary-container {
+                        padding: 15px;
+                    }
+                }
+
+                .save-build-section h3 {
+                    margin-bottom: 10px;
+                }
+
+                .search-box {
+                    width: 100%;
+                }
+            }
+
+        </style>
+        <section class="configurator" aria-labelledby="configuratorTitle">
+            <h2 id="configuratorTitle">Select Your Components</h2>
+            <div class="step-container" aria-label="Component Selection" style="display: flex; flex-direction: column;">
+
+                <!-- Add this within your configurator section where you want the search box to appear -->
+                <div class="search-container">
+                    <input type="text" id="partsSearchBox" class="search-box" placeholder="Search all components...">
+                </div>
+                <div class="modern-card">
+                    <div class="modern-header">Your Configuration</div>
+                    <div class="modern-total">Total Price: $<span id="totalPrice">0</span></div>
+                    <button class="modern-button" id="saveBuildButton">
+                        <svg class="icon-style" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <!-- SVG content for save icon -->
+                        </svg>
+                        Save Build
+                    </button>
+                    <button class="modern-button" id="checkCompatibilityButton">
+                        <svg class="icon-style" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <!-- SVG content for check icon -->
+                        </svg>
+                        Check Compatibility
+                    </button>
+                </div>
+
+
+                <!-- CPU Selection -->
+                <div style="margin-bottom: 10px;">
+                    <label for="cpu-select" style="margin-bottom: 5px;">CPU:</label>
+                    <select id="cpu-select" name="cpu">
+                        <option value="" disabled selected>--Please choose an option--</option>
+                    </select>
+                </div>
+
+                <!-- GPU Selection -->
+                <div style="margin-bottom: 10px;">
+                    <label for="gpu-select" style="margin-bottom: 5px;">GPU:</label>
+                    <select id="gpu-select" name="gpu">
+                        <option value="" disabled selected>--Please choose an option--</option>
+                    </select>
+                </div>
+
+                <!-- Motherboard Selection -->
+                <div style="margin-bottom: 10px;">
+                    <label for="motherboard-select" style="margin-bottom: 5px;">Motherboard:</label>
+                    <select id="motherboard-select" name="motherboard">
+                        <option value="" disabled selected>--Please choose an option--</option>
+                    </select>
+                </div>
+
+                <!-- Memory Selection -->
+                <div style="margin-bottom: 10px;">
+                    <label for="memory-select" style="margin-bottom: 5px;">Memory:</label>
+                    <select id="memory-select" name="memory">
+                        <option value="" disabled selected>--Please choose an option--</option>
+                    </select>
+                </div>
+
+                <!-- CPU Cooler Selection -->
+                <div style="margin-bottom: 10px;">
+                    <label for="cpu-cooler-select" style="margin-bottom: 5px;">CPU Cooler:</label>
+                    <select id="cpu-cooler-select" name="cpu-cooler">
+                        <option value="" disabled selected>--Please choose an option--</option>
+                    </select>
+                </div>
+
+                <!-- Internal Hard Drive Selection -->
+                <div style="margin-bottom: 10px;">
+                    <label for="internal-hd-select" style="margin-bottom: 5px;">Internal Hard Drive:</label>
+                    <select id="internal-hd-select" name="internal-hd">
+                        <option value="" disabled selected>--Please choose an option--</option>
+                    </select>
+                </div>
+
+                <!-- Power Supply Selection -->
+                <div style="margin-bottom: 10px;">
+                    <label for="psu-select" style="margin-bottom: 5px;">Power Supply:</label>
+                    <select id="psu-select" name="psu">
+                        <option value="" disabled selected>--Please choose an option--</option>
+                    </select>
+                </div>
+
+                <!-- Case Selection -->
+                <div style="margin-bottom: 10px;">
+                    <label for="case-select" style="margin-bottom: 5px;">Case:</label>
+                    <select id="case-select" name="case">
+                        <option value="" disabled selected>--Please choose an option--</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </main>
+<footer class="bg-dark">
+    <div class="container">
+        <section class="mt-4"></section>
+    </div>
+    <div class="container py-4 py-lg-5">
+        <div class="row justify-content-center">
+            <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                <h3 class="fs-6 fw-bold">Services</h3>
+                <ul class="list-unstyled">
+                    <li><a href="build.html">Builder</a></li>
+                    <li><a href="parts.html">Products</a></li>
+                    <li><a href="guides.html">Guides</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                <h3 class="fs-6 fw-bold">About</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                <h3 class="fs-6 fw-bold">Careers</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#">Job openings</a></li>
+                    <li><a href="#">Employee success</a></li>
+                    <li><a href="#">Benefits</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">
+                <span><img class="rounded-circle me-2" width="30" height="30" src="assets/img/logo.jpg?h=0703091e2f747011f5090490387b1b55"">Building Dreams</span>
+                <div class="fw-bold d-flex align-items-center mb-2"></div>
+                <p class="text-muted"></p>
+            </div>
+        </div>
+        <hr>
+        <div class="text-muted d-flex justify-content-between align-items-center pt-3">
+            <p class="mb-0">Copyright © 2024 Building Dreams</p>
+        </div>
+    </div>
+</footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchCpus();
+            fetchGpus();
+            fetchMotherboards();
+            fetchMemory();
+            fetchCpuCoolers();
+            fetchInternalHDDs();
+            fetchPSUs();
+            fetchCases();
+        });
+
+        function fetchCpus() {
+            fetch('http://localhost:3000/cpu')
+                .then(response => response.json())
+                .then(data => {
+                    const cpuSelect = document.getElementById('cpu-select');
+                    data.forEach(cpu => {
+                        const option = document.createElement('option');
+                        // Store both the model and the price as the value, separated by a comma
+                        option.value = `${cpu.model},${cpu.price}`;
+                        option.textContent = `${cpu.model} - ${cpu.cores} cores - ${cpu.baseClock}/${cpu.boostClock} GHz - $${cpu.price}`;
+                        cpuSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching CPUs:', error));
+        }
+
+        function fetchGpus() {
+            fetch('http://localhost:3000/video_card')
+                .then(response => response.json())
+                .then(data => {
+                    const gpuSelect = document.getElementById('gpu-select');
+                    data.forEach(gpu => {
+                        const option = document.createElement('option');
+                        option.value = `${gpu.model},${gpu.price}`;
+                        option.textContent =   `${gpu.model} - $${gpu.price}`
+                        gpuSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching GPUs:', error));
+        }
+        function fetchMotherboards() {
+            fetch('http://localhost:3000/motherboard')
+                .then(response => response.json())
+                .then(data => {
+                    const motherboardSelect = document.getElementById('motherboard-select');
+                    data.forEach(motherboard => {
+                        const option = document.createElement('option');
+                        option.value = `${motherboard.model},${motherboard.price}`;
+                        option.textContent = `${motherboard.model} - $${motherboard.price} - Socket: ${motherboard.socket} - Chipset: ${motherboard.chipset} - Form Factor: ${motherboard.formFactor} - Max RAM: ${motherboard.maxRam}GB`;
+                        motherboardSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching Motherboards:', error));
+        }
+
+        function fetchMemory() {
+            fetch('http://localhost:3000/memory')
+                .then(response => response.json())
+                .then(data => {
+                    const memorySelect = document.getElementById('memory-select');
+                    if (data.length === 0) {
+                        console.log("No memory data received");
+                    } else {
+                        data.forEach(memory => {
+                            const option = document.createElement('option');
+                            option.value = `${memory.name},${memory.price}`; // Include price
+                            option.textContent = `${memory.name} - $${memory.price} - Speed: ${memory.speed}MHz - Modules: ${memory.modules}`;
+                            memorySelect.appendChild(option);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching Memory:', error);
+                    alert('Failed to load memory data');
+                });
+        }
+        function fetchCpuCoolers() {
+            fetch('http://localhost:3000/cpu_cooler')
+                .then(response => response.json())
+                .then(data => {
+                    const cpuCoolerSelect = document.getElementById('cpu-cooler-select');
+                    data.forEach(cooler => {
+                        const option = document.createElement('option');
+                        option.value = `${cooler.name},${cooler.price}`;
+                        option.textContent = `${cooler.model} - $${cooler.price}`;
+                        cpuCoolerSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching CPU Coolers:', error));
+        }
+        function fetchInternalHDDs() {
+            fetch('http://localhost:3000/internal-hard-drive')
+                .then(response => response.json())
+                .then(data => {
+                    const internalHDDSelect = document.getElementById('internal-hd-select');
+                    data.forEach(internalHDD => {
+                        const option = document.createElement('option');
+                        option.value = `${internalHDD.name},${internalHDD.price}`; // Include price
+                        option.textContent = `${internalHDD.name} - Price $${internalHDD.price} - Capacity: ${internalHDD.capacity}GB - Type: ${internalHDD.type}`;
+                        internalHDDSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching Internal Hard Drives:', error));
+        }
+        function fetchPSUs() {
+            fetch('http://localhost:3000/power-supply')
+                .then(response => response.json())
+                .then(data => {
+                    const psuSelect = document.getElementById('psu-select');
+                    data.forEach(psu => {
+                        const option = document.createElement('option');
+                        option.value = `${psu.name},${psu.price}`; // Include price
+                        option.textContent = `${psu.name} - Price $${psu.price} - Size: ${psu.efficiency} - Wattage: ${psu.wattage}`;
+                        psuSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching Power Supplies:', error));
+        }
+        function fetchCases() {
+            fetch('http://localhost:3000/compcase')
+                .then(response => response.json())
+                .then(data => {
+                    const caseSelect = document.getElementById('case-select');
+                    data.forEach(compCase => {
+                        const option = document.createElement('option');
+                        option.value = `${compCase.name},${compCase.price}`; // Include price
+                        option.textContent = `${compCase.name} - $${compCase.price}`
+                        caseSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching Cases:', error));
+        }
+
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('checkCompatibilityButton').addEventListener('click', function() {
+                const cpuSelect = document.getElementById('cpu-select');
+                const motherboardSelect = document.getElementById('motherboard-select');
+                const selectedCpu = cpuSelect.options[cpuSelect.selectedIndex].text;
+                const selectedMotherboard = motherboardSelect.options[motherboardSelect.selectedIndex].text;
+
+                const cpuSocket = extractSocketFromCPU(selectedCpu);
+                const motherboardSocket = extractSocket(selectedMotherboard);
+
+                console.log('CPU Socket:', cpuSocket);
+                console.log('Motherboard Socket:', motherboardSocket);
+
+                if (cpuSocket && motherboardSocket && cpuSocket === motherboardSocket) {
+                    alert('The selected CPU and motherboard are compatible.');
+                } else {
+                    alert('Compatibility check failed: CPU and motherboard sockets do not match.');
+                }
+            });
+
+            function extractSocketFromCPU(cpuText) {
+                let normalizedCpuText = cpuText.toLowerCase();
+                if (normalizedCpuText.includes("amd")) {
+                    return "AM5";
+                } else if (normalizedCpuText.includes("intel")) {
+                    return "LGA1700";
+                } else {
+                    return null; // In case the CPU brand is neither AMD nor Intel
+                }
+            }
+
+            function extractSocket(selectionText) {
+                let socketStart = selectionText.indexOf('Socket:');
+                if (socketStart === -1) return null; // If no 'Socket:' found, return null
+
+                socketStart += 'Socket: '.length;
+                let socketEnd = selectionText.indexOf(' -', socketStart);
+                if (socketEnd === -1) socketEnd = selectionText.length;
+
+                let socketType = selectionText.substring(socketStart, socketEnd).trim();
+                return socketType.replace(/\s+/g, '').toUpperCase(); // Remove spaces and normalize to uppercase
+            }
+
+        });
+
+
+    </script>
+
+
+
+
+    <script>
+        // Function to fetch CPU data and populate the select element
+        function populateCPUs() {
+            fetch('/cpu') // Adjust the fetch URL if necessary
+                .then(response => response.json())
+                .then(cpus => {
+                    const selectElement = document.getElementById('cpu-select');
+                    // Take only the first 50 CPUs using the slice method
+                    cpus.slice(0, 50).forEach(cpu => {
+                        const option = document.createElement('option');
+                        option.value = cpu.model;
+                        option.textContent = `${cpu.model} - $${cpu.price}`;
+                        selectElement.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching CPU data:', error));
+        }
+
+        // Call the function on page load
+        document.addEventListener('DOMContentLoaded', populateCPUs);
+    </script>
+    <script>
+        document.getElementById('cpu-select').addEventListener('change', function() {
+            const selectedCPU = this.value;
+            console.log('User selected CPU:', selectedCPU);
+            // Perform actions based on the selected CPU, e.g., display details, update compatibility, etc.
+        });
+    </script>
+
+
+    <script>
+        document.getElementById('saveBuildButton').addEventListener('click', function() {
+            // Collect the selected components
+            const buildData = {
+                cpu: document.getElementById('cpu-select').value,
+                gpu: document.getElementById('gpu-select').value,
+                motherboard: document.getElementById('motherboard-select').value,
+                memory: document.getElementById('memory-select').value,
+                cpuCooler: document.getElementById('cpu-cooler-select').value,
+                internalHardDrive: document.getElementById('internal-hd-select').value,
+                powerSupply: document.getElementById('psu-select').value,
+                case: document.getElementById('case-select').value
+            };
+
+            // Calculate total price
+            let totalPrice = 0;
+            Object.values(buildData).forEach(item => {
+                const price = item.split(',')[1]; // Assuming price is the second element after splitting by ','
+                if (price) {
+                    totalPrice += parseFloat(price);
+                }
+            });
+
+            // Convert build data to CSV
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "Component,Value,Price\n"; // Updated Column headers
+            Object.keys(buildData).forEach(key => {
+                const value = buildData[key].split(',')[0];
+                const price = buildData[key].split(',')[1];
+                csvContent += `${key},${value},${price}\n`; // Each row of data
+            });
+            csvContent += `Total,,${totalPrice}\n`; // Total price at the end
+
+            // Ask user for the file name without the extension
+            const filenameInput = prompt("Enter a file name for your build:", "buildData");
+            if (filenameInput) {
+                const filename = filenameInput.endsWith('.csv') ? filenameInput : filenameInput + '.csv'; // Ensure .csv extension
+
+                // Encode URI to handle special characters
+                const encodedUri = encodeURI(csvContent);
+
+                // Create a temporary link and download the file
+                const a = document.createElement('a');
+                a.href = encodedUri;
+                a.download = filename; // Use the user-provided filename with .csv extension
+                document.body.appendChild(a);
+                a.click(); // Simulate a click on the link to download the file
+
+                // Clean up by removing the link
+                document.body.removeChild(a);
+
+                // Optionally alert the user
+                alert('Build saved locally as ' + filename + '. Total cost: $' + totalPrice.toFixed(2));
+            } else {
+                alert('Save cancelled.');
+            }
+        });
+
+
+
+    </script>
+
+    <script>
+
+        document.getElementById('partsSearchBox').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            filterParts(searchTerm);
+        });
+
+        function filterParts(searchTerm) {
+            // Define all the select elements you want to search within
+            const selectElements = [
+                document.getElementById('cpu-select'),
+                document.getElementById('gpu-select'),
+                document.getElementById('motherboard-select'),
+                document.getElementById('memory-select'),
+                document.getElementById('cpu-cooler-select'),
+                document.getElementById('internal-hd-select'),
+                document.getElementById('psu-select'),
+                document.getElementById('case-select'),
+            ];
+
+            selectElements.forEach(select => {
+                // Loop over the options in each select element
+                Array.from(select.options).forEach(option => {
+                    const text = option.textContent.toLowerCase();
+                    const matchesSearch = text.includes(searchTerm);
+                    // Toggle the visibility of the option based on whether it matches the search term
+                    option.style.display = matchesSearch ? 'block' : 'none';
+                });
+            });
+        }
+
+    </script>
+
+    <script>
+
+        function calculateTotal() {
+            const components = [
+                document.getElementById('cpu-select'),
+                document.getElementById('gpu-select'),
+                document.getElementById('motherboard-select'),
+                document.getElementById('memory-select'),
+                document.getElementById('cpu-cooler-select'),
+                document.getElementById('internal-hd-select'),
+                document.getElementById('psu-select'),
+                document.getElementById('case-select')
+            ];
+
+            let total = 0;
+            components.forEach(component => {
+                const selectedOption = component.options[component.selectedIndex];
+                if (selectedOption && selectedOption.value) {
+                    const price = selectedOption.value.split(',')[1];
+                    total += parseFloat(price || 0);
+                }
+            });
+
+            document.getElementById('totalPrice').textContent = total.toFixed(2);
+        }
+
+        // Add event listeners to each select element to update the total when a selection is made
+        document.getElementById('cpu-select').addEventListener('change', calculateTotal);
+        document.getElementById('gpu-select').addEventListener('change', calculateTotal);
+        document.getElementById('motherboard-select').addEventListener('change', calculateTotal);
+        document.getElementById('memory-select').addEventListener('change', calculateTotal);
+        document.getElementById('cpu-cooler-select').addEventListener('change', calculateTotal);
+        document.getElementById('internal-hd-select').addEventListener('change', calculateTotal);
+        document.getElementById('psu-select').addEventListener('change', calculateTotal);
+        document.getElementById('case-select').addEventListener('change', calculateTotal);
+
+        // Optional: Call calculateTotal on page load if there are any default selections
+        document.addEventListener('DOMContentLoaded', calculateTotal);
+
+
+    </script>
+
+</body>
+
+</html>
